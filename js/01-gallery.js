@@ -35,9 +35,12 @@ function openModal(event){
     
     if(isModalOpenImg){
         const bigImg = event.target.getAttribute("data-source");
-        galleryImg.src = bigImg
-
-
+        
+        const instance = basicLightbox.create(`
+        <img src="${bigImg}" 
+        width="800" height="600">`)
+    
+    instance.show()
         console.log(galleryImg)
     }
 }
