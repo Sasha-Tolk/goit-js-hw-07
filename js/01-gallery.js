@@ -1,10 +1,9 @@
 import {galleryItems}  from './gallery-items.js';
 // Change code below this line
 
-// console.log(galleryItems);
+
 
 const galleryDiv = document.querySelector(".gallery");
-const galleryImg = document.querySelector(".gallery__image");
 
 function createCard (galleryItems) {   
 return galleryItems.map(({preview, original, description}) => {
@@ -30,6 +29,7 @@ galleryDiv.addEventListener('click', (event) => {
 
 galleryDiv.addEventListener('click', openModal);
 
+
 function openModal(event){
     const isModalOpenImg = event.target.classList.contains('gallery__image');
     
@@ -41,6 +41,14 @@ function openModal(event){
         width="800" height="600">`)
     
     instance.show()
-        console.log(galleryImg)
+     
+    window.addEventListener('keydown', (event) => {
+    if(event.key === 'Escape'){
+      instance.close()
+    };
+  });
     }
+    
 }
+
+
